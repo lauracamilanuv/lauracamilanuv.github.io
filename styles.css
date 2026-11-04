@@ -1,152 +1,277 @@
+/* ==========================================================
+   Mobile first: los estilos base son para celular.
+   El media query (min-width: 768px) ajusta tablet y escritorio.
+   ========================================================== */
+
+/* Variables */
+:root {
+    --color-texto: #000;
+    --color-hover: #555;
+    --color-fondo: #f5f5f5;
+    --color-header: lavenderblush;
+    --transicion: color 0.3s ease;
+    --espacio-lateral: 20px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    min-height: 100vh; 
-    margin: 0; 
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
     padding: 0;
-    background: #f5f5f5; 
+    background: var(--color-fondo);
 }
 
-header{
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+/* Evita que el header sticky tape los títulos al navegar con el menú */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Header */
+header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 0px;
-    z-index: 1000; 
+    top: 0;
+    z-index: 1000;
     width: 100%;
-    height: 30px;
     margin-bottom: 30px;
-    background-color: lavenderblush;
-    padding: 20px 0px;
+    background-color: var(--color-header);
+    padding: 15px var(--espacio-lateral);
 }
-
 
 header nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
     margin: 0;
     padding: 0;
     justify-content: center;
 }
 
 header nav ul li a {
-    color: #000000;
-    text-decoration: none; 
+    color: var(--color-texto);
+    text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease; 
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+    transition: var(--transicion), border-color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: gray;
-    border-bottom: 1px solid gray;
+header nav ul li a:hover,
+header nav ul li a:focus-visible {
+    color: var(--color-hover);
+    border-bottom-color: var(--color-hover);
 }
 
-.infopersonalsec{
-    height: 100%;
+/* Información personal */
+.infopersonalsec {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 20px var(--espacio-lateral);
     flex-direction: column;
 }
 
-.infopersonalsec .inforpersonal {
+.inforpersonal {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.inforpersonal .contenedor_infopersonal .nombre{
-    margin: 10px 0px 5px 0px;
+.nombre {
+    margin: 10px 0 5px;
+    font-size: 1.6rem;
 }
 
-.inforpersonal .contenedor_infopersonal .cargo_actual{
-    margin: 10px 0px 5px 0px;
+.cargo_actual {
+    margin: 10px 0 5px;
+    min-height: 1.2em; /* evita salto de layout mientras se escribe */
 }
 
-.infopersonalsec .inforpersonal .contenedor_foto .profile{
-    width: 150px;
-    height: 100%;
+/* Cursor que parpadea al final del texto */
+.cargo_actual .cursor {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.profile {
+    width: 120px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 40%;
-
 }
 
-.infopersonalsec .inforpersonal .contenedor_infopersonal{
-    margin-left: 10px;
-}
-
-.social_media_personal{
+/* Redes sociales */
+.social_media_personal {
     display: flex;
+    justify-content: center;
     gap: 15px;
 }
 
-.iconLinkendln{
+.iconLinkendln {
     font-size: 2rem;
-    color: #000000;
-    transition: color 0.3s ease;
+    color: var(--color-texto);
+    transition: var(--transicion);
 }
 
-.iconLinkendln:hover{
-    color: #c9c9c9; 
+.iconLinkendln:hover,
+.iconLinkendln:focus-visible {
+    color: var(--color-hover);
 }
 
-#personal{
+/* Sobre mí */
+#personal {
     max-width: 1000px;
+    padding: 0 var(--espacio-lateral);
 }
 
-#tecnologias{
-    height: 300px;
+/* Tecnologías */
+#tecnologias {
+    padding: 30px var(--espacio-lateral);
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1000px;
 }
 
-.contenedor_tecnologias h2{
-   text-align: center;
+.contenedor_tecnologias h2 {
+    text-align: center;
 }
 
-.contenedor_tecnologias ul{
+.contenedor_tecnologias ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-}
-.contenedor_tecnologias ul li i{
-    font-size: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
 }
 
-#experienciaproyectos{
-    height: 100%;
+.contenedor_tecnologias ul li i {
+    font-size: 2.5rem;
+}
+
+/* Experiencia y proyectos */
+#proyectos {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1000px;
-    margin: 40px 0px;
+    margin: 30px 0;
+    padding: 0 var(--espacio-lateral);
 }
 
-.experiencia_proyectos__container{
+.experiencia_proyectos__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
 }
 
-.experiencia_proyectos__container .columna_experiencia {
-    width: 50%;
+.columna_experiencia,
+.columna_proyectos {
+    width: 100%;
 }
 
-.experiencia_proyectos__container .columna_proyectos{
-    width: 50%;
-}
-
-footer{
+/* Footer */
+footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    padding: 0 var(--espacio-lateral);
+    text-align: center;
+}
+
+/* ==========================================================
+   Tablet y escritorio
+   ========================================================== */
+@media (min-width: 768px) {
+    section {
+        scroll-margin-top: 80px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    header nav ul {
+        gap: 2rem;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    .inforpersonal {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .contenedor_infopersonal {
+        margin-left: 10px;
+    }
+
+    .nombre {
+        font-size: 2rem;
+    }
+
+    .profile {
+        width: 150px;
+    }
+
+    .social_media_personal {
+        justify-content: flex-start;
+    }
+
+    #tecnologias {
+        padding: 40px var(--espacio-lateral);
+    }
+
+    .contenedor_tecnologias ul {
+        gap: 20px;
+    }
+
+    .contenedor_tecnologias ul li i {
+        font-size: 3rem;
+    }
+
+    #proyectos {
+        margin: 40px 0;
+    }
+
+    .experiencia_proyectos__container {
+        flex-direction: row;
+    }
+
+    .columna_experiencia,
+    .columna_proyectos {
+        width: 50%;
+    }
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+}
+
+/* Respeta a quien desactiva animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    .cargo_actual .cursor {
+        animation: none;
+    }
 }
