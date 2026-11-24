@@ -8,7 +8,7 @@ function typewriter(el, speed = 100) {
 
   const typed = document.createElement('span');
   const cursor = document.createElement('span');
-  cursor.className = 'cursor';
+  cursor.className = 'hero__cursor';
   cursor.textContent = '|';
   cursor.setAttribute('aria-hidden', 'true');
 
@@ -29,4 +29,4 @@ function typewriter(el, speed = 100) {
   }, speed);
 }
 
-document.querySelectorAll('.cargo_actual').forEach((el) => typewriter(el));
+document.querySelectorAll('.hero__cargo').forEach((el) => typewriter(el));

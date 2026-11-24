@@ -1,104 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi portafolio - Laura Camila Nuvan Acero</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi portafolio - Laura Camila Nuvan Acero</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="js/funciones.js" defer></script>
 </head>
+
 <body>
-    <!-- Encabezado -->
-  <header>
-    <nav aria-label="Menú principal" role="navigation">
-      <ul>
-        <li><a href="#personal">Sobre Mí</a></li>
-        <li><a href="#tecnologias">Tecnologías</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#experiencia">Experiencia Laboral</a></li>
+  <!-- Encabezado -->
+  <header class="header">
+    <nav class="nav" aria-label="Menú principal">
+      <ul class="nav__lista">
+        <li><a class="nav__link" href="#personal">Sobre Mí</a></li>
+        <li><a class="nav__link" href="#tecnologias">Tecnologías</a></li>
+        <li><a class="nav__link" href="#proyectos">Proyectos</a></li>
+        <li><a class="nav__link" href="#experiencia">Experiencia Laboral</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Foto y Nombre -->
-  <section class="infopersonalsec">
-    <div class="inforpersonal">
-        <section class="contenedor_foto">
-            <img src="./assets/IMG_4532.heic" alt="Foto de Perfil" class="profile">
-        </section>
-        <section class="contenedor_infopersonal">
-            <h1 class="nombre">Hola! Soy Laura Camila Nuvan Acero</h1>
-            <p class="cargo_actual">FrontEnd Developer 🇨🇴</p>
-            <p>Contactame: camilanuvan@gmail.com</p>
-            <div class="social_media_personal">
-              <a class="iconLinkendln" href="https://www.linkedin.com/in/laura-camila-n-7a15ba140/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a class="iconLinkendln" href="https://github.com/camilanuv" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
-        </section>
-    </div>
-  </section>
-
-  <!-- Sobre Mí -->
-  <section id="personal">
-    <h2>Sobre Mí</h2>
-    <p>Hola! <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50">🔭 Soy Desarrolladora FrontEnd en Tita Media, trabajo con VTEX IO, React, SASS y CSS.</p>
-    <p>🔭 Actualmente me encuentro estudiando GraphQL y temas avanzados de React.</p>
-  </section>
-
-  <!-- Tecnologías -->
-  <section id="tecnologias">
-    <div class="contenedor_tecnologias">
-        <h2>Tecnologías</h2>
-        <ul>
-            <li><i class="fab fa-git"></i> </li>
-            <li><i class="fab fa-html5"></i> </li>
-            <li><i class="fab fa-css3-alt"></i></li>
-            <li><i class="fab fa-js"></i> </li>
-            <li><i class="fab fa-react"></i></li>
-            <li><i><img src="./assets/Vtex.png" alt="Logo de Vtex" title="Vtex" height="55px" width="55px"></i></li>
-        </ul>
-    </div>
-  </section>
-
-  <!-- Proyectos -->
-  <section id="proyectos">
-    <div class="experiencia_proyectos__container">
-      <div class="columna_experiencia">
-        <h3>Experiencia</h3>
-        <ul>
-          <li>
-            <p>Tita Media</p>
-            <p>Desde 2022 desempeño el cargo de FrontEnd Developer Junior, implementando nuevas secciones y/o landings en los ecommerce implementados en Vtex IO, utilizando tecnologias como React.</p>
-            
-          </li>
-        </ul>
-    </div>
-
-      <div class="columna_proyectos">
-        <h3>Mis Proyectos</h3>
-        
-          <p>En construccion... ✨👩🏻‍💻 </p>
-        
+  <main>
+    <!-- Foto y Nombre -->
+    <section class="hero">
+      <div class="hero__contenido">
+        <div class="hero__foto">
+          <img src="./assets/Foto.jpeg" alt="Laura Camila Nuvan" class="hero__img">
+        </div>
+        <div class="hero__info">
+          <h1 class="hero__nombre">Hola! Soy Laura Camila Nuvan Acero</h1>
+          <p class="hero__cargo">FrontEnd Developer 🇨🇴</p>
+          <p>Contáctame: <a href="mailto:camilanuvan@gmail.com">camilanuvan@gmail.com</a></p>
+          <div class="social">
+            <a class="social__link" href="https://www.linkedin.com/in/laura-camila-n-7a15ba140/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre en nueva pestaña)">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a class="social__link" href="https://github.com/camilanuv" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre en nueva pestaña)">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experiencia -->
-  <section>
-    aqui va la experiencia
-  </section>
+    <!-- Sobre Mí -->
+    <section id="personal" class="sobre-mi">
+      <h2>Sobre Mí</h2>
+      <p>Hola! <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50" alt="">🔭 Soy Desarrolladora
+        FrontEnd en Tita Media, trabajo con VTEX IO, React, SASS y CSS.</p>
+      <p>🔭 Actualmente me encuentro estudiando GraphQL y temas avanzados de React.</p>
+    </section>
 
-  <script src="funciones.js"></script>  
+    <!-- Tecnologías -->
+    <section id="tecnologias" class="tecnologias">
+      <div class="tecnologias__contenido">
+        <h2 class="tecnologias__titulo">Tecnologías</h2>
+        <ul class="tecnologias__lista">
+          <li><i class="fab fa-git tecnologias__icono" role="img" aria-label="Git"></i></li>
+          <li><i class="fab fa-html5 tecnologias__icono" role="img" aria-label="HTML5"></i></li>
+          <li><i class="fab fa-css3-alt tecnologias__icono" role="img" aria-label="CSS3"></i></li>
+          <li><i class="fab fa-js tecnologias__icono" role="img" aria-label="JavaScript"></i></li>
+          <li><i class="fab fa-react tecnologias__icono" role="img" aria-label="React"></i></li>
+          <li><img src="./assets/Vtex.png" alt="VTEX" title="VTEX" height="55" width="55"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="proyectos">
+      <div class="columnas">
+        <div class="columnas__item">
+          <h3>Mis Proyectos</h3>
+
+          <p>En construccion... ✨👩🏻‍💻 </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia" class="experiencia">
+      <div class="columnas">
+        <div class="columnas__item">
+          <h3>Experiencia</h3>
+          <ul>
+            <li>
+              <p>Tita Media</p>
+              <p>Desde 2022 desempeño el cargo de FrontEnd Developer Junior, implementando nuevas secciones y/o landings
+                en los ecommerce implementados en Vtex IO, utilizando tecnologias como React.</p>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <!-- Copy -->
-  <footer>
-    <div class="footer_page">
+  <footer class="footer">
+    <div class="footer__contenido">
       <p>© 2026 Laura Camila Nuvan Acero. Todos los derechos reservados.</p>
     </div>
   </footer>
 
 </body>
+
 </html>
